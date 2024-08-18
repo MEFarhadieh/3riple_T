@@ -9,4 +9,4 @@
 | CellChat         | R              | An R package for analyzing cell-cell communication networks.                                  | [CellChat](https://github.com/jinworks/CellChat)                  |
 | NICHES           | Python         | A tool for identifying and analyzing cellular niches and signaling interactions.              | [NICHES](https://github.com/kirbyju/NICHES)                       |
 | SCENIC           | Python         | A tool for analyzing gene regulatory networks and signaling based on single-cell data.        | [SCENIC on GitHub](https://github.com/aertslab/SCENIC)            |
-| LIANA        | R              | An R package for benchmarking and integrating cell-cell communication inference methods from single-cell data. | [LIANA on GitHub](https://github.com/saeyslab/LIANA)              |
+| LIANA        | R & Python             | An R package for benchmarking and integrating cell-cell communication inference methods from single-cell data. | [LIANA on GitHub](https://github.com/saeyslab/LIANA)              |
