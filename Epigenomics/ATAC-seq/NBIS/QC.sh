@@ -16,4 +16,8 @@ head ENCFF045OAB.chr14.macs3.saf
 module load subread/2.0.0
 featureCounts -p -F SAF -a ENCFF045OAB.chr14.macs3.saf --fracOverlap 0.2 -o ENCFF045OAB.peaks_macs3.counts ENCFF045OAB.chr14.proc_rh.nsort.bam
 
+featureCounts -p -F SAF -a nk_merged_peaks.saf --fracOverlap 0.2 -o nk_merged_peaks_macs3.counts ENCFF363HBZ.chr14.proc.bam ENCFF398QLV.chr14.proc.bam ENCFF828ZPN.chr14.proc.bam ENCFF045OAB.chr14.proc.bam
+head nk_merged_peaks_macs3.counts
 
+# Prepare for R
+awk '(NR>1)' nk_merged_peaks_macs3.counts > nk_merged_peaks_macs3.counts.tsv
