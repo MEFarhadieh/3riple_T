@@ -11,4 +11,4 @@
 | SCENIC           | Python         | A tool for analyzing gene regulatory networks and signaling based on single-cell data.        | [SCENIC on GitHub](https://github.com/aertslab/SCENIC)            |
 | LIANA            | R & Python     | An R package for benchmarking and integrating cell-cell communication inference methods from single-cell data. | [LIANA on GitHub](https://github.com/saeyslab/LIANA)              |
 | OmniPath         | R & Python     | A comprehensive resource of prior knowledge on signaling pathways and ligand-receptor interactions. | [OmniPath](https://github.com/saezlab/OmnipathR)                  |
-| DecoupleR        | R              | A tool for inferring biological activities from omics data using network-based methods.       | [DecoupleR on GitHub](https://github.com/saezlab/decoupleR)       |
+| DecoupleR        | R & Python     | A tool for inferring biological activities from omics data using network-based methods.       | [DecoupleR on GitHub](https://github.com/saezlab/decoupleR)       |
