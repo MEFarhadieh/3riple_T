@@ -1,6 +1,5 @@
 nextflow.enable.dsl=2
 
-// output directory defaults to your $LAB_SCRATCH/results/hello-nf
 def OUTDIR = params.outdir ?: "${System.getenv('LAB_SCRATCH') ?: "$baseDir"}/results/hello-nf"
 
 // tiny input channel
