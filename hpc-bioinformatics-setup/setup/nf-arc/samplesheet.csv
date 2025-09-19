@@ -1,0 +1,4 @@
+sample_id,libraries,reference
+pbmc_unsorted_10k,/$LAB_SCRATCH/pbmc_unsorted_10k/libraries.csv,/$LAB_ARCHIVE/ref/hg38/cellranger-arc/refdata-cellranger-arc-GRCh38-2024-A
+donorA_day0,/$LAB_SCRATCH/donorA_day0/libraries.csv,/$LAB_ARCHIVE/ref/hg38/cellranger-arc/refdata-cellranger-arc-GRCh38-2024-A
+donorB_day7,/$LAB_SCRATCH/donorB_day7/libraries.csv,/$LAB_ARCHIVE/ref/hg38/cellranger-arc/refdata-cellranger-arc-GRCh38-2024-A
