@@ -1,0 +1,32 @@
+---
+title: "AF Sex Effect – Integration Benchmark"
+format: html
+toc: true
+---
+
+## Overview
+This report shows a comparison of the merging methods and checks that **batch** is removed and **gender effect** is preserved.
+
+## Metrics Summary
+```{python}
+import pandas as pd, glob
+dfs = []
+for f in glob.glob("../results/*/*/metrics.csv"):
+    m = pd.read_csv(f); m["run"] = f.split("/")[-3]; m["method"] = f.split("/")[-2]
+    dfs.append(m)
+df = pd.concat(dfs, ignore_index=True)
+df.sort_values(["run","method"], inplace=True)
+df
+
+# A simple composite score: maximize iLISI, minimize (1-kBET), maximize ASW_sex & AUC_sex
+import numpy as np
+def z(x): return (x - x.mean())/x.std()
+for c in ["iLISI","kBET","ASW_sex","AUC_sex"]:
+    if c in df.columns: df[c+"_z"] = z(df[c].fillna(df[c].mean()))
+df["score_combo"] = df[["iLISI_z","kBET_z","ASW_sex_z","AUC_sex_z"]].sum(axis=1, min_count=1)
+df.sort_values("score_combo", ascending=False)[["run","method","score_combo","iLISI","kBET","ASW_sex","AUC_sex"]]
+
+import glob, IPython
+imgs = sorted(glob.glob("../results/*/*/umap.png"))
+for im in imgs:
+    display(IPython.display.Image(im, width=640))
