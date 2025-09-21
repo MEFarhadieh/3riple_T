@@ -1,0 +1,17 @@
+name: py_scvi
+channels: [conda-forge, bioconda]
+dependencies:
+  - python=3.10
+  - scanpy>=1.9
+  - anndata
+  - pandas
+  - numpy
+  - scikit-learn
+  - matplotlib
+  - umap-learn
+  - scvi-tools>=0.20
+  - harmonypy
+  - bbknn
+  - pip
+  - pip:
+      - scib
