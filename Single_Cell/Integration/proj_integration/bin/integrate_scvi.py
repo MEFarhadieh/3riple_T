@@ -1,0 +1,20 @@
+#!/usr/bin/env python
+import scanpy as sc, scvi, argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("--infile",  required=True)
+parser.add_argument("--outfile", required=True)
+parser.add_argument("--batch_key", default="batch")
+parser.add_argument("--n_hvgs", type=int, default=3000)
+parser.add_argument("--neighbors", type=int, default=30)
+args = parser.parse_args()
+
+ad = sc.read_h5ad(args.infile)
+sc.pp.highly_variable_genes(ad, n_top_genes=args.n_hvgs, flavor="seurat_v3", subset=True)
+scvi.model.SCVI.setup_anndata(ad, batch_key=args.batch_key, layer=None)
+model = scvi.model.SCVI(ad, n_layers=2, n_latent=30)
+model.train(max_epochs=100, early_stopping=True)
+ad.obsm["X_scvi"] = model.get_latent_representation()
+sc.pp.neighbors(ad, use_rep="X_scvi", n_neighbors=args.neighbors)
+sc.tl.umap(ad)
+sc.tl.leiden(ad, key_added="leiden_scvi")
+ad.write(args.outfile)
