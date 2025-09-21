@@ -1,0 +1,22 @@
+name: r_seurat
+channels: [conda-forge, bioconda, r]
+dependencies:
+  - r-base>=4.2
+  - r-seurat>=5.0
+  - r-harmony
+  - r-irlba
+  - r-matrix
+  - r-ggplot2
+  - r-remotes
+  - r-reticulate
+  - r-devtools
+  - r-Rcpp
+  - r-R.utils
+  - r-SeuratObject
+  - r-SeuratDisk
+  - r-hdf5r
+  - r-cowplot
+  - r-data.table
+  - r-readr
+  - r-dplyr
+  - r-tidyr
