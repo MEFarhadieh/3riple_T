@@ -9,7 +9,7 @@
 #SBATCH -e $LAB_ARCHIVE/public_studies/Hill/cellranger_runs/_logs/velocyto_%A_%a.err
 
 set -euo pipefail
-export PATH="$HOME/.local/bin:$PATH"   # ensure velocyto is visible
+export PATH="$HOME/.local/bin:$PATH"   
 
 BASE=$LAB_ARCHIVE/public_studies/Hill
 RUNS=$BASE/cellranger_runs
