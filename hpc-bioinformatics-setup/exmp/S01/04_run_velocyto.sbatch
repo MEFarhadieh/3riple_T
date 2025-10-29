@@ -21,8 +21,8 @@ SAMPLE_ID="$(basename "$SAMPLE_DIR")"
 
 BAM="$SAMPLE_DIR/outs/possorted_genome_bam.bam"
 BAI="$SAMPLE_DIR/outs/possorted_genome_bam.bam.bai"
-RAW_BCS="$SAMPLE_DIR/outs/raw_feature_bc_matrix/barcodes.tsv.gz"
-OUTDIR="$SAMPLE_DIR/velocyto_raw"
+RAW_BCS="$SAMPLE_DIR/outs/filtered_feature_bc_matrix/barcodes.tsv.gz"
+OUTDIR="$SAMPLE_DIR/velocyto"
 
 [[ -s "$BAM" ]] || { echo "[ERROR] Missing BAM: $BAM"; exit 1; }
 [[ -s "$BAI" ]] || { echo "[ERROR] Missing BAI: $BAI"; exit 1; }
