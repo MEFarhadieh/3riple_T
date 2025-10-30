@@ -18,8 +18,8 @@ while read -r SAMPLE_DIR; do
   CSV="$SAMPLE_DIR/velocyto/fraction_unspliced.csv"
   echo "[INFO] $SAMPLE_ID → $(basename "$CSV")"
 
-  export LOOM CSV
-  python - <<'PY'
+  # Pass variables directly to Python
+  LOOM="$LOOM" CSV="$CSV" python - <<'PY'
 import os
 import qclus as qc
 loom = os.environ["LOOM"]
