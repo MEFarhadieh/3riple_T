@@ -115,6 +115,7 @@ def detect_doublet_clusters_hybrid(adata_copy):
     print(f"    Cluster score 75th percentile: {np.percentile(clst_meds, 75):.3f}")
     
     # Method 1: Statistical testing (MAD-based)
+    # Adopted from https://github.com/Teichlab/mapcloud/blob/master/scripts/starsolo/postprocess.py
     pvals, bh_pvals = test_outlier_improved(clst_meds, upper_mad_only=True)
     
     # Method 2: Percentile-based (relative threshold)
