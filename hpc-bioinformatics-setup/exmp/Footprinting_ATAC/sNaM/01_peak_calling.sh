@@ -31,7 +31,7 @@ CHROMSIZES=/mnt/archive/farhadie/ref/mm10/mm10.chrom.sizes
 OUTDIR=$BASE/01_peaks
 mkdir -p $OUTDIR $BASE/logs
 
-echo "[$(date)] === شروع peak calling ==="
+echo "[$(date)] === peak calling start ==="
 
 # ─────────────────────────────────────────────
 # peak calling with macs2
