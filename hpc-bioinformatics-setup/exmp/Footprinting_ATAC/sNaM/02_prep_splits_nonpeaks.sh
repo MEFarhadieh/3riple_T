@@ -49,3 +49,9 @@ singularity exec --bind /mnt/archive \
         -o /mnt/archive/farhadie/tn5_bias/skin_Mphage/sNaM_sorted/02_prep/sNaM
 
 wc -l 02_prep/sNaM_negatives.bed
+
+
+grep -E "^chr([1-9]|1[0-9]|X|Y|M)\b" \
+    /mnt/archive/farhadie/ref/mm10/mm10.chrom.sizes \
+    > 02_prep/mm10.main.chrom.sizes
+
